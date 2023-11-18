@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "lore-weaver"
+version = "0.1.0"
+description = "The essential tool combining knowledge research and content generation to enrich and shape your adventures in the roleplay universe."
+authors = ["Killian Mahé <killianmahe.pro@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+langchain = "^0.0.337"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
