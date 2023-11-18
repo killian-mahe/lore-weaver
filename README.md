@@ -9,7 +9,7 @@ To use LoreWeaver, follow these simple steps:
 1. Clone this repository to your local machine.
 2. Install `Poetry`.
 ````shell
-python -m venv .env & source .env/bin/activate
+python -m venv venv & source venv/bin/activate
 pip install -U pip setuptools
 pip install poetry
 ````
