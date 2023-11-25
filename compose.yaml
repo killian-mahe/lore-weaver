@@ -14,10 +14,14 @@ services:
     volumes:
       # So that Traefik can listen to the Docker events
       - /var/run/docker.sock:/var/run/docker.sock
+      - traefik.yaml:/etc/traefik/traefik.yaml
 
   chroma-db: # This is also the hostname of the container within the Docker network (i.e. https://opensearch-node1/)
     image: chromadb/chroma:latest # Specifying the latest available image - modify if you want a specific version
     container_name: chroma-db
+    labels:
+      - traefik.http.routers.chroma-db.rule=Host(`killianmahe.fr`)
+      - traefik.http.services.chroma-db.loadbalancer.server.port=8000
     networks:
       - chroma-net # All of the containers will join the same Docker bridge network
 
