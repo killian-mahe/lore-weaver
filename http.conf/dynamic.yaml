@@ -5,3 +5,10 @@ http:
       entrypoints: websecure
       tls:
         certresolver: myresolver
+      service: api-service
+
+  service:
+    api-service:
+      loadBalancer:
+        servers:
+          - url: "http://localhost:8081"
