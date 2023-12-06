@@ -1,19 +1,12 @@
 entryPoints:
+  web:
+    address: ':80'
+
   websecure:
     address: ':443'
-
-certificatesResolvers:
-  myresolver:
-    acme:
-      tlsChallenge: true
-      email: "postmaster@killianmahe.fr"
-      storage: "/letsencrypt/acme.json"
 
 api:
   insecure: true
 
 providers:
-  docker:
-    exposedByDefault: false
-  file:
-    directory: /etc/traefik/conf/
+  docker: {}
