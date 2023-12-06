@@ -20,8 +20,7 @@ services:
     container_name: lore-weaver-api
     labels:
       - traefik.http.routers.api.rule=Host(`api.loreweaver.killianmahe.fr`)
-    ports:
-      - "8081:8087"
+      - traefik.http.services.api.loadbalancer.server.port=8087
     networks:
       - chroma-net
 
