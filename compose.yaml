@@ -26,7 +26,7 @@ services:
     labels:
       - traefik.http.routers.api.rule=Host(`api.loreweaver.killianmahe.fr`)
       - traefik.http.routers.api.entrypoints=websecure
-      - traefik.http.routes.api.tls=true
+      - traefik.http.routers.api.tls=true
       - traefik.http.services.api.loadbalancer.server.port=8087
 
 #  chroma-db: # This is also the hostname of the container within the Docker network (i.e. https://opensearch-node1/)
