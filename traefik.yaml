@@ -5,13 +5,6 @@ entryPoints:
   websecure:
     address: ':443'
 
-certificatesResolvers:
-  myresolver:
-    acme:
-      tlsChallenge: true
-      email: killianmahe.pro@gmail.com
-      storage: /letsencrypt/acme.json
-
 api:
   insecure: true
 
