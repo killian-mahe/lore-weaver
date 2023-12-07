@@ -9,18 +9,23 @@ services:
       - "80:80"
       # The Web UI (enabled by --api.insecure=true)
       - "8080:8080"
+    labels:
+      - traefik.tls.certificates.certFile
     volumes:
       # So that Traefik can listen to the Docker events
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.yaml:/etc/traefik/traefik.yaml
       - ./http.conf/:/etc/traefik/conf/
+      - ./letsencrypt:/letsencrypt
 
   api:
     image: ghcr.io/killian-mahe/lore-weaver:main
     container_name: lore-weaver-api
     labels:
       - traefik.http.routers.api.rule=Host(`api.loreweaver.killianmahe.fr`)
+      - traefik.http.routers.api.entrypoints=websecure
       - traefik.http.services.api.loadbalancer.server.port=8087
+      - traefik.http.routers.api.tls.certresolver=myresolver
 
 #  chroma-db: # This is also the hostname of the container within the Docker network (i.e. https://opensearch-node1/)
 #    image: chromadb/chroma:latest # Specifying the latest available image - modify if you want a specific version
