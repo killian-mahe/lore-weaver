@@ -19,7 +19,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.yaml:/etc/traefik/traefik.yaml
       - ./http.conf/:/etc/traefik/conf/
-      - ./letsencrypt:/letsencrypt
 
   api:
     image: ghcr.io/killian-mahe/lore-weaver:main
