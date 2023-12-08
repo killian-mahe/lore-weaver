@@ -4,3 +4,9 @@ tls:
       keyFile: /etc/traefik/conf/_.killianmahe.fr_private_key.key
       stores:
         - "default"
+
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /etc/traefik/conf/killianmahe.fr_ssl_certificate.cer
+        keyFile: /etc/traefik/conf/_.killianmahe.fr_private_key.key
