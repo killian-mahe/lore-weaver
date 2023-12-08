@@ -15,7 +15,4 @@ providers:
   file:
     directory: /etc/traefik/conf/
     watch: true
-  docker:
-    tls:
-      cert: /etc/traefik/conf/killianmahe.fr_ssl_certificate.cer
-      key: /etc/traefik/conf/_.killianmahe.fr_private_key.key
+  docker: {}

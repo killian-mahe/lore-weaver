@@ -22,7 +22,7 @@ services:
     image: ghcr.io/killian-mahe/lore-weaver:main
     container_name: lore-weaver-api
     labels:
-      - traefik.http.routers.api.rule=Host(`api.loreweaver.killianmahe.fr`)
+      - traefik.http.routers.api.rule=Host(`loreweaver.killianmahe.fr`) & Path(`/api`)
       - traefik.http.routers.api.entrypoints=websecure
       - traefik.http.routers.api.tls=true
       - traefik.http.services.api.loadbalancer.server.port=8087
