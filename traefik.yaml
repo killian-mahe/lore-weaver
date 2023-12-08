@@ -8,6 +8,9 @@ entryPoints:
 api:
   insecure: true
 
+log:
+  level: DEBUG
+
 providers:
   file:
     directory: /etc/traefik/conf/
