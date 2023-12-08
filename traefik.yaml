@@ -10,6 +10,6 @@ api:
 
 providers:
   file:
-    directory: /etc/traefik/conf
+    directory: /etc/traefik/conf/
     watch: true
   docker: {}
