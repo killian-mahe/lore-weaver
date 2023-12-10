@@ -1,8 +1,6 @@
 from fastapi import FastAPI, Response
 
-app = FastAPI(
-    root_path="/api"
-)
+app = FastAPI()
 
 
 @app.get("/healthcheck")
