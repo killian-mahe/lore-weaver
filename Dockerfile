@@ -12,4 +12,4 @@ COPY . .
 RUN $POETRY_HOME/bin/poetry install
 
 ENTRYPOINT ["/opt/poetry/bin/poetry"]
-CMD ["run", "uvicorn", "lore_weaver.__main__:app", "--host", "0.0.0.0", "--port", "${EXPOSE_PORT}"]
+CMD ["run", "uvicorn", "lore_weaver.__main__:app", "--host", "0.0.0.0", "--port", "$EXPOSE_PORT"]
