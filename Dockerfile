@@ -12,4 +12,4 @@ RUN $POETRY_HOME/bin/poetry install
 EXPOSE 8080
 
 ENTRYPOINT ["/opt/poetry/bin/poetry"]
-CMD ["run", "uvicorn", "lore_weaver.__main__:app", "--port", "8080"]
+CMD ["run", "uvicorn", "lore_weaver.__main__:app", "--port", "8080", "--host", "0.0.0.0"]
