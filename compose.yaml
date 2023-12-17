@@ -34,7 +34,8 @@ services:
       STREAMLIT_SERVER_HOST: "0.0.0.0"
     labels:
       - traefik.http.routers.api.rule=Host(`loreweaver.killianmahe.fr`)
-      - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto = https
+      - "traefik.http.middlewares.test-redirectscheme.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.test-redirectscheme.redirectscheme.permanent=true"
       - traefik.http.routers.api.entrypoints=websecure
       - traefik.http.routers.api.tls=true
       - traefik.http.services.api.loadbalancer.server.port=8080
