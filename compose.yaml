@@ -28,9 +28,10 @@ services:
   interface:
     image: ghcr.io/killian-mahe/lore-weaver:main
     container_name: lore-weaver-ui
-    command: "run streamlit run lore_weaver/demo/Home.py"
+    command: "run streamlit run lore_weaver/demo/Home.py --server.enableWebsocketCompression=false"
     environment:
       STREAMLIT_SERVER_PORT: 8080
+      STREAMLIT_SERVER_HOST: "0.0.0.0"
     labels:
       - traefik.http.routers.api.rule=Host(`loreweaver.killianmahe.fr`)
       - traefik.http.routers.api.entrypoints=websecure
