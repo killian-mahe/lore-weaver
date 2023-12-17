@@ -30,3 +30,4 @@ jobs:
           deploy_path: /home/pandore/loreweaver
           stack_file_name: compose.yaml
           keep_files: 5
+          args: up
